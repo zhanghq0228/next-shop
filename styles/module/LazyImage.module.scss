@@ -1,0 +1,70 @@
+.box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.boxRate {
+  overflow: hidden;
+  width: 100%;
+  img {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+  }
+  &:global(.width-box) {
+    img {
+      width: 100%;
+    }
+  }
+  &:global(.height-box) {
+    img {
+      height: 100%;
+    }
+  }
+  &:global(.cover-box) {
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.boxOrigin {
+  img {
+    width: 100%;
+  }
+  &:global(.cover-box) {
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.lazyloadErrorBox.boxOrigin {
+  background: #e1e1e1;
+  padding-bottom: 100%;
+  .img {
+    display: none;
+  }
+}
+
+.lazyloadErrorBox {
+  background: #e1e1e1;
+  &:after {
+    position: absolute;
+    content: 'load failed';
+    color: #333;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .img {
+    display: none;
+  }
+}

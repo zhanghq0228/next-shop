@@ -1,0 +1,74 @@
+.box {
+  padding: 25px 0;
+  :global(.session-title) {
+    margin-top: 20px;
+  }
+  :global(.slick-prev) {
+    left: 45px;
+    z-index: 10;
+  }
+  :global(.slick-next) {
+    right: 45px;
+    z-index: 10;
+  }
+  :global(.slick-slider) {
+    height: 393px;
+  }
+}
+
+.slickItem {
+  width: 305px!important;
+  background: #fff;
+  margin: 0 10px;
+  display: inline-block;
+}
+
+.user {
+  padding: 10px 10px 10px 75px;
+  position: relative;
+  height: 68px;
+  box-sizing: border-box;
+}
+
+.userAvatar {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #BFBFBF;
+  left: 10px;
+  top: 10px;
+}
+
+.image {
+  &:global(.img-box) {
+    height: 325px;
+    img {
+      height: 325px;
+      object-fit: cover;
+    }
+  }
+}
+
+.userName {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(85,87,90,1);
+  line-height: 22px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0 0 5px;
+  height: 22px;
+}
+.accountId {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(143,143,145,1);
+  line-height: 19px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}

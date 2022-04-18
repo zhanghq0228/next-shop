@@ -1,0 +1,56 @@
+.container {
+  background-color: #fff;
+  box-shadow: 0 2px 10px 0 rgb(0 0 0 / 8%);
+}
+.notice {
+  width: 100%;
+}
+.noticeItem {
+  background-color: rgb(56, 56, 56);
+  text-align: center;
+  a {
+    line-height: 40px;
+    color: #fff;
+    width: 100%;
+  }
+}
+
+.logoBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo {
+  height: 50px;
+  padding: 5px 0;
+}
+.toolBox {
+  justify-content: flex-end;
+}
+.toolItem {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  :global(.iconfont) {
+    font-size: 26px;
+    cursor: pointer;
+    color: #333;
+  }
+}
+.menus {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 0 -15px;
+}
+.menusItem {
+  a {
+    padding: 12px 15px;
+    color: #666;
+    display: block;
+  }
+}
+@media (max-width: 576px) {
+  .logo {
+    height: 35px;
+  }
+}

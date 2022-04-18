@@ -1,0 +1,15 @@
+.productListBox {
+  width: 100%;
+  box-sizing: border-box;
+
+  .productList {
+    display: flex;
+    flex-wrap: wrap;
+    &Item {
+      margin-bottom: 0.48rem;
+      box-sizing: border-box;
+      cursor: pointer;
+      position: relative;
+    }
+  }
+}

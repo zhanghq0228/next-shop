@@ -1,0 +1,51 @@
+.box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.rowReverse {
+  flex-direction: row-reverse;
+}
+
+.textContainer {
+  width: 40%;
+}
+.textTitle {
+  margin-bottom: 24px;
+  font-size: 30px;
+  color: #000;
+}
+.textContent {
+  color: #000;
+  font-size: 16px;
+
+}
+.textLink {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 10px 30px;
+  background-color: #000;
+  color: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+}
+.imageContainer {
+  width: 50%;
+  flex-shrink: 0;
+}
+
+@media (max-width: 575.9px) { 
+  .box {
+    flex-direction: column-reverse;
+  }
+  .textTitle {
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  .imageContainer, .textContainer {
+    width: 100%;
+  }
+  .imageContainer {
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,24 @@
+$--color-yellow: yellow;
+
+$browser-big-default-font-size: 100px !default;
+$browser-small-default-font-size: 75px !default;
+
+@function bigScreenPxTorem($px) {
+  //$px为需要转换的字号 屏幕宽度大于1040
+  @if (unitless($px)) {
+    @return bigScreenPxTorem($px + 0px);
+  } @else if (unit($px) == em) {
+    @return $px;
+  }
+  @return ($px / $browser-big-default-font-size) * 1rem;
+}
+
+@function smallScreenPxTorem($px) {
+  //$px为需要转换的字号 屏幕宽度小于1040
+  @if (unitless($px)) {
+    @return smallScreenPxTorem($px + 0px);
+  } @else if (unit($px) == em) {
+    @return $px;
+  }
+  @return ($px / $browser-small-default-font-size) * 1rem;
+}

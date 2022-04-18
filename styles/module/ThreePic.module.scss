@@ -1,0 +1,136 @@
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -12px;
+  overflow: hidden;
+}
+.itemBox {
+  box-sizing: border-box;
+}
+@media (min-width: 768px) { 
+  .style3 {
+    .itemBox {
+      flex-basis: 25%;
+      // padding: 0 12px;
+      a {
+        display: block;
+        position: relative;
+        padding-bottom: calc(100% - 24px);
+      }
+      .threePicImg {
+        position: absolute;
+        top: 0;
+        left: 12px;
+        bottom: 0;
+        right: 12px;
+      }
+    }
+    .image2Box {
+      flex-basis: 50%;
+      a {
+        padding-bottom: calc(50% - 24px);
+      }
+    }
+  }
+  .style1, .style2 {
+    .itemBox {
+      position: relative;
+      flex-basis: 50%;
+      padding: 0 12px;
+      box-sizing: border-box;
+      a {
+        display: block;
+        width: 100%;
+        left: 0;
+        right: 12px;
+        position: relative;
+      }
+    }
+
+    .image1Box, .image2Box {
+      a {
+        padding-bottom: 48%;
+        overflow: hidden;
+      }
+    }
+
+    .image2Box {
+      order: 3;
+    }
+
+    .image3Box {
+      a {
+        padding-bottom: 48%;
+      }
+    }
+
+    .threePicImg {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+    
+    .image1 {
+      top: 0;
+      bottom: 12px;
+      overflow: hidden;
+    }
+    .image2 {
+      top: 12px;
+      bottom: 0;
+      overflow: hidden;
+    }
+    .image3 {
+      bottom: -100%;
+    }
+  }
+  .style2 {
+    .itemBox {
+      flex-basis: 33.3333%;
+    }
+    .image3Box {
+      flex-basis: 66.6666%;
+    }
+    .image1Box, .image2Box {
+      a {
+        padding-bottom: 62.5%;
+      }
+    }
+    .image3Box {
+      a {
+        padding-bottom: 31.25%;
+      }
+    }
+  }
+}
+  
+@media (max-width: 767.9px) {
+  .box {
+    margin: 0;
+  }
+  
+  .style1, .style3 {
+    .itemBox {
+      flex-basis: 100%;
+    }
+    .itemBox + .itemBox {
+      margin-top: 15px;
+    }
+  }
+  .box.style2 {
+    margin: 0 -7.5px;
+  }
+  .style2 {
+    .image1Box, .image2Box {
+      flex-basis: 50%;
+      padding: 0 7.5px;
+    }
+    .image3Box {
+      flex-basis: 100%;
+      margin-top: 15px;
+      padding: 0 7.5px;
+    }
+  }
+}

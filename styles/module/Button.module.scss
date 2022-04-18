@@ -1,0 +1,12 @@
+.box {
+  button {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $--primary-color;
+    color: $--primary-btn-color;
+  }
+}

@@ -1,0 +1,40 @@
+.subscrForm {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  :global(.sp-input) {
+    max-width: 350px;
+  }
+}
+
+.subName {
+  font-size: 16px;
+  line-height: 1.4;
+  margin-top: 20px;
+  text-align: center;
+}
+
+@media (max-width: 767.9px) {
+  .subName {
+    font-size: 14px;
+  }
+}
+@media (max-width: 575.9px) { 
+  .subscrForm {
+    flex-direction: column;
+    align-items: center;
+    :global(.btn) {
+      margin-top: 20px;
+      line-height: 44px;
+    }
+    
+  }
+}
+.subscr {
+  :global(.session-title) {
+    margin-bottom: 0;
+  }
+  :global(.btn) {
+    max-width: 200px;
+  }
+}

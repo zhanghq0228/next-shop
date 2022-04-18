@@ -1,0 +1,206 @@
+.detail {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+.productImage {
+  position: relative;
+  display: inline-block;
+  width: 50%;
+  &__thumbs {
+    height: 70px;
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    i {
+      display: inline-block;
+      transform: rotate(-90deg);
+      font-size: 20px;
+    }
+    &_content {
+      position: relative;
+      z-index: 12;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      &_box {
+        display: flex;
+        flex-wrap: nowrap;
+        position: absolute;
+      }
+      &_item {
+        cursor: pointer;
+        box-sizing: border-box;
+        margin: 0 12px;
+        width: 70px;
+        height: 70px;
+      }
+    }
+    &_btn {
+      // position: relative;
+      cursor: pointer;
+      width: 24px;
+      height: 62px;
+      background: #666666;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:hover {
+        background: #333;
+      }
+    }
+    &_buttonPrev {
+      // margin-right: 16px;
+      color: #fff;
+    }
+    &_buttonNext {
+      // margin-left: 16px;
+      color: #fff;
+    }
+  }
+  :global(.slick-prev) {
+    left: 15px;
+    z-index: 10;
+  }
+  :global(.slick-next) {
+    right: 15px;
+    z-index: 10;
+  }
+  .item {
+    position: relative;
+  }
+  .imageItem {
+    width: 100%;
+  }
+  .active {
+    border: 2px solid #333333;
+  }
+}
+.productInfo {
+  box-sizing: border-box;
+  max-width: 50%;
+  display: inline-block;
+  margin-left: bigScreenPxTorem(64);
+  .productInfo_header {
+    h1 {
+      font-size: 18px;
+      line-height: 23px;
+      margin-bottom: 12px;
+      color: $--title-color;
+      color: var(--title-color);
+      margin-top: 0;
+    }
+    .toolBox {
+      padding: 11px 9px;
+      padding-left: 0;
+      margin-top: bigScreenPxTorem(16px);
+      margin-bottom: bigScreenPxTorem(24px);
+    }
+    .productPric {
+      color: $--sale-price-color;
+      color: var(--sale-price-color);
+      line-height: 35px;
+      display: flex;
+      .money {
+        font-size: 30px !important;
+      }
+    }
+    .originPrice {
+      > span {
+        font-size: 24px;
+      }
+      color: $--original-price-color;
+      color: var(--original-price-color);
+      // text-decoration: line-through;
+      margin-left: 28px;
+      position: relative;
+      &:before {
+        content: '';
+        top: 50%;
+        height: 2px;
+        background-color: $--original-price-color;
+        background-color: var(--original-price-color);
+        left: -5px;
+        right: -5px;
+        position: absolute;
+      }
+    }
+
+    .productDiscount {
+      margin-top: 12px;
+      display: flex;
+
+      .productDiscount__list {
+        overflow: hidden;
+        position: relative;
+        flex: 1;
+        word-break: break-word;
+        a {
+          color: #333;
+        }
+        li {
+          margin-left: 4px;
+          margin-bottom: 8px;
+          color: #ff4041;
+        }
+        .more-deals {
+          margin-left: 16px;
+          color: #666;
+          font-size: 12px;
+        }
+      }
+    }
+    .iconTextBox {
+      align-items: flex-start;
+      margin-bottom: 7px;
+      .iconfont {
+        color: $--primary-color;
+        color: var(--primary-color);
+        font-size: 16px;
+        margin-right: 4px;
+        line-height: 1;
+      }
+    }
+  }
+  .sizeGuide {
+    button {
+      display: flex;
+      align-items: center;
+    }
+    span {
+      margin-left: 5px;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+  .sRow {
+    display: flex;
+    margin-bottom: bigScreenPxTorem(24px);
+    flex-direction: column;
+  }
+  .sLabel {
+    color: #999;
+    flex-shrink: 0;
+    margin-bottom: 6px;
+  }
+}
+.productInfoDesc {
+  width: 100%;
+}
+@media (max-width: 767.98px) {
+  .detail {
+    padding: 0;
+    margin-top: 0px;
+  }
+  .productImage {
+    width: 100%;
+    padding: 0 -15px;
+    flex: 1;
+    margin-top: 0;
+    // height: 375px;
+  }
+  .productImage__thumbs {
+    display: none;
+  }
+}

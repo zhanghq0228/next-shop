@@ -1,0 +1,18 @@
+.box {
+  display: flex;
+  margin: 0 -12px;
+  flex-wrap: wrap;
+}
+.item {
+  padding: 0 12px;
+  box-sizing: border-box;
+  margin-bottom: 24px;
+}
+.itemTitle {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 16px;
+  color: $--title-color;
+  color: var(--title-color);
+  font-weight: $--font-weight-bold;
+}
