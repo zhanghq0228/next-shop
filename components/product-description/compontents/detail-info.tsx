@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState, useEffect } from 'react'
 import style from '../Detail.module.scss'
 import Modal from 'components/modal/index'
@@ -17,8 +18,8 @@ interface GetList {
 }
 
 const ConcatOptions = (options = [], data = []) => {
-  return options.map(item => {
-    const res = data.find(i => i.id === item.skuId)
+  return options.map((item: any) => {
+    const res = data.find((i: any) => i.id === item.skuId) || {}
     return {
       ...item,
       ...res
@@ -38,27 +39,29 @@ const DetailInfo: React.FC<props> = ({
   const [infoList, setinfoList] = useState(null)
   const [CanBuyList, setCanBuyList] = useState([])
   const [PriceList, setPriceList] = useState([])
-  const [Options, setOptions] = useState([])
+  const [Options, setOptions] = useState<any[]>([])
   const [visible, setvisible] = useState(false)
   const [inputNum, setinputNum] = useState(1)
 
   const Discount: GetList = async id => {
-    const res = await getDiscount(id)
+    const res: any = await getDiscount(id)
     if (res.code === 0) {
       setinfoList(res.data || [])
     }
   }
   const VariantInventory: GetList = async id => {
-    const res = await getVariantInventory(id)
+    const res: any = await getVariantInventory(id)
     if (res.code === 0) {
       let variant = res.data || []
-      variant = variant.filter(i => i.saleStatus && i.saleInventoryQuantity > 0)
+      variant = variant.filter(
+        (i: any) => i.saleStatus && i.saleInventoryQuantity > 0
+      )
       setCanBuyList(variant)
       setOptions(ConcatOptions(variant, variants))
     }
   }
   const VariantPrice: GetList = async id => {
-    const res = await getVariantPrice(id)
+    const res: any = await getVariantPrice(id)
     if (res.code === 0) {
       setPriceList(res.data || [])
     }
@@ -99,7 +102,7 @@ const DetailInfo: React.FC<props> = ({
           <div className={`${style.iconTextBox} ${style.productDiscount}`}>
             <i className="iconfont icondiscount"></i>
             <ul className={style.productDiscount__list}>
-              {(infoList || []).map(item => (
+              {(infoList || []).map((item: any) => (
                 <li key={item.desc}>
                   <span>{item.desc}</span>
                 </li>
@@ -108,10 +111,7 @@ const DetailInfo: React.FC<props> = ({
           </div>
         </div>
       </div>
-
-      {/* sku */}
-      <Variants options={options} variants={Options}></Variants>
-
+      {/* sku */}/<Variants options={options} variants={Options}></Variants>
       {/* 尺码表 */}
       <div className={style.sRow}>
         <div className={style.sizeGuide}>
@@ -121,7 +121,6 @@ const DetailInfo: React.FC<props> = ({
           </button>
         </div>
       </div>
-
       {/* 商品数量 */}
       <div className={style.sRow}>
         <label className={style.sLabel}>qty</label>
@@ -157,7 +156,6 @@ const DetailInfo: React.FC<props> = ({
           <span id="buyNumErr" className="input-number__error"></span>
         </div>
       </div>
-
       {/* 加购按钮 */}
       <div className="product-actions">
         <div className="flex btns skin-button">

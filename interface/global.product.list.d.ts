@@ -13,6 +13,7 @@ declare namespace ProductList {
       title: string
       seoTitle: string
       thumbnail: string
+      jumpUrl?: string
       salePrice: number
       compareAtPrice?: number
       maxSalePrice?: number

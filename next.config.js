@@ -4,6 +4,7 @@ module.exports = {
   env: {
     APP_ENV: 'production'
   },
+  productionBrowserSourceMaps: true,
   typescript: {
     // ignoreBuildErrors: true,
   },

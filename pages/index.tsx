@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import React from 'react'
 import SpHead from 'components/common/SpHead'
 import type { AppContext } from 'next/app'

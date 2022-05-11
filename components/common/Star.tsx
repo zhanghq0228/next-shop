@@ -1,11 +1,13 @@
 import React from 'react'
 import { When, Case } from './When'
 type Props = {
-  commentAvgStar?: number
+  commentAvgStar?: any
   commentNum?: number
 }
 
 export default function Star({ commentAvgStar, commentNum }: Props) {
+  const star: number = Number(commentAvgStar)
+
   return (
     <>
       {commentAvgStar && (
@@ -13,34 +15,34 @@ export default function Star({ commentAvgStar, commentNum }: Props) {
           {[1, 2, 3, 4, 5].map(item => (
             <React.Fragment key={item}>
               <When>
-                <Case if={commentAvgStar >= item}>
+                <Case if={star >= item}>
                   <span className="pz-star aaa">
                     <i
                       className={`iconfont iconic-star ${
-                        commentAvgStar >= item ? 'active' : ''
+                        star >= item ? 'active' : ''
                       }`}
                     ></i>
                   </span>
                 </Case>
-                <Case elseif={item - commentAvgStar < 1}>
+                <Case elseif={item - star < 1}>
                   <span className="pz-star bbb">
-                    <i
+                    {/* <i
                       className={`iconfont iconic-star active-${parseInt(
-                        (commentAvgStar + 1 - item) * 100
+                        (star + 1 - item) * 100
                       )} active-num`}
-                    ></i>
+                    ></i> */}
                     <i className="iconfont iconic-star"></i>
                   </span>
                 </Case>
                 <Case else>
-                  <span class="pz-star ccc">
-                    <i class="iconfont iconic-star"></i>
+                  <span className="pz-star ccc">
+                    <i className="iconfont iconic-star"></i>
                   </span>
                 </Case>
               </When>
             </React.Fragment>
           ))}
-          <span class="item-attr notranslate">({commentNum || 0})</span>
+          <span className="item-attr notranslate">({commentNum || 0})</span>
         </div>
       )}
     </>

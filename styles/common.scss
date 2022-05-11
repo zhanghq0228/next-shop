@@ -407,7 +407,21 @@ input[type='checkbox'] {
 
 //  原价金额
 .o-p-color {
+  display: inline-block;
+  margin-left: 6px;
+  position: relative;
   color: var(--original-price-color) !important;
+  &:before {
+    content: '';
+    top: 50%;
+    height: 1px;
+    background-color: $--original-price-color;
+    background-color: var(--original-price-color);
+    left: -3px;
+    right: -3px;
+    position: absolute;
+    margin-top: -1px;
+  }
 }
 
 // 评价星级

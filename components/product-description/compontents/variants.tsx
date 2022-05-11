@@ -1,12 +1,12 @@
+// @ts-nocheck
 import React, { useState, useReducer, useContext, useEffect } from 'react'
 import style from '../Detail.module.scss'
-import LazyImage from '@/common/LazyImage'
-import SkuSelect from '@/lib/SkuList.ts'
+import SkuSelect from '@/lib/skuList.ts'
 
 interface Props {
   options: Detail.Options[]
 }
-let Selection = null
+let Selection: any = null
 
 const Variants: React.FC<Props> = ({ options = [], variants = [] }) => {
   const [Available, setAvailable] = useState([])
@@ -51,7 +51,7 @@ const Variants: React.FC<Props> = ({ options = [], variants = [] }) => {
         )
       }
       if (!options.selected) {
-        console.log(options.selected, '减少', options)
+        // console.log(options.selected, '减少', options)
         setselected(
           selected.splice(
             selected.findIndex(v => v === options.id),

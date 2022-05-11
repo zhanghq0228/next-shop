@@ -1,3 +1,3 @@
 import request from './index'
-export const getCollectionsList = (urls: string) =>
-  request({ url: `/api/v1/test/collections/${urls}`, method: 'GET' })
+export const getCollectionsList = (urls: string, params: any = {}) =>
+  request({ url: `/api/v1/test/collections/${urls}`, params, method: 'GET' })

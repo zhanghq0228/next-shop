@@ -13,6 +13,7 @@ declare namespace Detail {
     isImgValue?: boolean
     name: string
     values: optionsValue[]
+    variants: any
   }
 
   interface ProductDescription {
@@ -25,5 +26,6 @@ declare namespace Detail {
     currency: string
     imgs: Imgs[]
     options: Options[]
+    variants: never[]
   }
 }

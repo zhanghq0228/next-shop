@@ -1,16 +1,17 @@
-function init() {
-  var whdef = 100 / 1920
-  var wW = document.documentElement.clientWidth
-  var rem
-  var layoutId = 'pc-layout'
+const init = function (): void {
+  console.log(1233)
+  const whdef: number = 100 / 1920
+  let wW: number = document.documentElement.clientWidth
+  let rem: number
+  let layoutId: string = 'pc-layout'
   if (wW <= 1040) {
-    let dpr = 0,
-      scale = 0
+    let dpr: number = 0,
+      scale: number = 0
 
     if (!dpr && !scale) {
-      var isAndroid = window.navigator.appVersion.match(/android/gi)
-      var isIPhone = window.navigator.appVersion.match(/iphone/gi)
-      var devicePixelRatio = window.devicePixelRatio
+      const isAndroid = window.navigator.appVersion.match(/android/gi)
+      const isIPhone = window.navigator.appVersion.match(/iphone/gi)
+      const devicePixelRatio = window.devicePixelRatio
       if (isIPhone) {
         // iOS下，对于2和3的屏，用2倍的方案，其余的用1倍方案
         if (devicePixelRatio >= 3 && (!dpr || dpr >= 3)) {
@@ -26,9 +27,7 @@ function init() {
       }
       scale = 1 / dpr
     }
-    // if (wW > 750) {
-    //   wW = 750;
-    // }
+
     if (wW / dpr > 540) {
       wW = 540 * dpr
     }
@@ -39,11 +38,18 @@ function init() {
   } else {
     rem = 100
   }
-  var p = document.querySelector('#htmlStyle')
+  let p: Element | null = document.querySelector('#htmlStyle') || null
   document.body.id = layoutId
   document.documentElement.style.fontSize = rem + 'px'
-  p.innerHTML = 'html{font-size: ' + rem + 'px}'
+  if (p) {
+    p.innerHTML = 'html{font-size: ' + rem + 'px}'
+  }
+}
+if (typeof window !== undefined) {
+  try {
+    init()
+    window.addEventListener('resize', init)
+  } catch (e) {}
 }
 
-init()
-window && window.addEventListener('resize', init)
+export default {}

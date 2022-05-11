@@ -1,9 +1,13 @@
+// @ts-nocheck
+// @ts-nocheck
+
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import '@/styles/index.scss'
 import '@/lib/lazy-image'
+import '@/lib/flex.ts'
 import type { AppProps, AppContext } from 'next/app'
-import Script from 'next/script'
+
 import {
   getModal,
   getHeaderMenuData,
@@ -22,7 +26,6 @@ function MyApp(options: AppProps) {
   return (
     <>
       <SpHead title="shopNext" list={customHeadCode} />
-      <Script src="@/lib/flex" strategy="beforeInteractive" />
       <Component {...pageProps} />
     </>
   )
@@ -76,6 +79,7 @@ MyApp.getInitialProps = async ({ ctx, Component }: AppContext) => {
       getCollections(req, [...new Set(collectionIds)].join(','))
     ])
     collectionMap = {}
+    // console.log(collectionRespon, 'collectionRespon')
     collectionRespon.data.forEach(i => {
       collectionMap[i.id] = {
         collectionImageUrl: i.collectionImageUrl || '',

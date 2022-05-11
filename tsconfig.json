@@ -18,6 +18,7 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "resolveJsonModule": true,
+    "suppressImplicitAnyIndexErrors": true,
     "skipLibCheck": true,
     "strict": true,
     "target": "esnext",
@@ -25,11 +26,11 @@
       "@/components": [
         "components/*"
       ],
-      "@/styles": [
-        "styles/*"
-      ],
       "@/lib": [
         "lib/*"
+      ],
+      "@/styles": [
+        "styles/*"
       ],
       "@/services": [
         "services/*"

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState, useEffect, useReducer } from 'react'
 import Slider from 'react-slick'
 import LazyImage from 'components/common/LazyImage'
@@ -25,7 +26,7 @@ const DetailSlider: React.FC<Props> = ({ imgs }) => {
   const [slider, setslider] = useState(null)
 
   useEffect(() => {
-    dispatch({ type: 'imgsNum', imgsNum: (imgs||[]).length })
+    dispatch({ type: 'imgsNum', imgsNum: (imgs || []).length })
   }, [imgs])
 
   useEffect(() => {

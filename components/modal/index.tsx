@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react'
 import style from './modal.module.scss'
-import { createPortal } from 'react-dom'
 
 interface Props {
   visible: boolean

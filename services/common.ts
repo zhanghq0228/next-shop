@@ -50,3 +50,10 @@ export const postSubScriptEamil = (data: any) => {
     data
   })
 }
+
+export const getCurrency = () => {
+  return request({
+    url: `/api/v1/currency`,
+    method: 'GET'
+  })
+}

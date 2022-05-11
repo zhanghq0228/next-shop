@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import React from 'react'
 import { useRouter } from 'next/router'
 import { getDetailList } from '@/services/detail'
@@ -24,10 +26,6 @@ Collections.getInitialProps = async ({ query }) => {
   const { urls } = query
   const seourl = urls.pop()
   const res = await getDetailList(encodeURIComponent(seourl))
-  // const res = await getDetailList(
-  //   '134430-womens-messenger-bag-korean-version-of-the-multi-function-buckle-mobile-phone-bag-fashion'
-  // )
-
   if (res.code === 0) {
     return {
       detail: res.data,

@@ -9,7 +9,7 @@ const defaultState = {
   imgsNum: 0
 }
 
-const reducer = (state = defaultState, action) => {
+const reducer = (state = defaultState, action: any) => {
   switch (action.type) {
     case 'prev':
       var index = state.conuste - 1

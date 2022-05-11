@@ -1,7 +1,4 @@
-// interface SkuSelectFace {
-//   (group_attrs: Array<Number>, sku_list: Array<Number>): void
-// }
-
+// @ts-nocheck
 export default class SkuSelect {
   groupAttrs: Array<number> = [] // sku属性
   skuList: Array<number> = [] // 可购买的 sku 属性

@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import React from 'react'
 import DetailSlider from './compontents/detail-slider'
 import DetailInfo from './compontents/detail-info'

@@ -9,14 +9,17 @@ const ProductListCom: React.FC<ProductList.List> = ({ data }) => {
   console.log(data)
   return (
     <div className={style.productListBox}>
-      <ul className={style.productList}>
+      <ul className={`${style.productList} ${style['row-item-4']}`}>
         {(data || []).map(item => (
-          <li key={item.id} className={`${style.productListItem} row-4`}>
-            <a href="">
+          <li key={item.id} className={`${style.productListItem}`}>
+            <a href={item.jumpUrl}>
               <div>
                 <LazyImage src={item.thumbnail} rate=""></LazyImage>
               </div>
-              <Title title={item.seoTitle}></Title>
+              <Title
+                title={item.seoTitle}
+                classS={style.productItemTitle}
+              ></Title>
               <Money
                 saleprice={item.salePrice}
                 originalprice={item.compareAtPrice}
